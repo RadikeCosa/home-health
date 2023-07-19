@@ -1,0 +1,75 @@
+<div class="container">
+  <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+    <legend><h3>Reporte</h3></legend>
+    <div class="date">
+      <label for="date">Select a Date </label>
+      <input id="date" type="date" formControlName="date" />
+    </div>
+    <div class="patient">
+      <label for="patient">Pick or type a patient</label>
+      <input
+        type="text"
+        list="patient"
+        placeholder="Start typing"
+        formControlName="patient"
+      />
+      <datalist id="patient">
+        <option value="Adan"></option>
+        <option value="Eva"></option>
+        <option value="Moises"></option>
+        <option value="Abraham"></option>
+      </datalist>
+    </div>
+    <div class="vital-signs" formGroupName="vitalSigns">
+      <h4>Vital Signs</h4>
+      <div class="hr">
+        <label for="hr">hr</label>
+        <input type="number" formControlName="hr" id="hr" />
+      </div>
+      <div class="rr">
+        <label for="rr">rr</label>
+        <input type="number" formControlName="rr" id="rr" />
+      </div>
+      <div class="bp" formGroupName="bp">
+        <h4>Blood Pressure</h4>
+        <label for="sistolic">sistolic</label>
+        <input type="number" formControlName="sistolic" />
+        <label for="diastiolic">diastolic</label>
+        <input type="number" formControlName="diastolic" />
+      </div>
+      <div class="o2">
+        <label for="o2">o2</label>
+        <input type="number" formControlName="o2" />
+      </div>
+    </div>
+    <div class="report">
+      <h4>Report</h4>
+      <label for="report">Report</label>
+      <textarea
+        name="report"
+        id="report"
+        cols="30"
+        rows="20"
+        formControlName="report"
+      ></textarea>
+    </div>
+    <div formArrayName="prescriptions">
+      <h4>Prescriptions</h4>
+      <button type="button" (click)="addPrescription()">
+        + Add another prescription
+      </button>
+
+      <div *ngFor="let prescription of prescriptions.controls; let i = index">
+        <!-- The repeated alias template -->
+        <label for="prescription-{{ i }}">prescription:</label>
+        <input id="prescription-{{ i }}" type="text" [formControlName]="i" />
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!reportForm.valid">Submit</button>
+  </form>
+  <p>{{ reportForm.value | json }}</p>
+  <p>is valid {{ reportForm.valid }}</p>
+  <p>is touched {{ reportForm.touched }}</p>
+  <p>is valid? {{ reportForm.status }}</p>
+</div>

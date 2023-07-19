@@ -1,0 +1,96 @@
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+legend {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+label {
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: var(--secondary-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.vital-signs,
+.report,
+.prescriptions {
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.vital-signs h4,
+.report h4,
+.prescriptions h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.vital-signs label,
+.report label {
+  margin-bottom: 5px;
+}
+
+.vital-signs input[type="number"],
+.report textarea,
+.prescriptions input[type="text"] {
+  width: calc(50% - 5px);
+  margin-right: 10px;
+}
+
+.prescriptions button {
+  display: block;
+  margin-top: 10px;
+}

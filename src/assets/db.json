@@ -1,0 +1,43 @@
+{
+  "patients": [
+    {
+      "name": "Ricardo",
+      "lastName": "Ruben",
+      "address": "Avda. Siempreviva 1231",
+      "telephone": "555-1234"
+    }
+  ],
+  "crew": [
+    {
+      "name": "Vilma",
+      "lastName": "Palma",
+      "address": "Avda Pachanga",
+      "telephone": "555-1124",
+      "speciality": "nurse"
+    }
+  ],
+  "reports": [
+    {
+      "date": "",
+      "patient": "",
+      "isInHome": true,
+      "inCompany": true,
+      "profesional": "",
+      "vitalSigns": {
+        "hr": 80,
+        "rr": 12,
+        "bp": { "sistolic": 130, "diastolic": 70 },
+        "o2": 99,
+        "glucose": 150
+      },
+      "other": {
+        "rest": "",
+        "bowel": "",
+        "urine": "",
+        "pain": "",
+        "other": ""
+      },
+      "report": { "report": "", "indications": ["", ""] }
+    }
+  ]
+}
